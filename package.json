@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Harpsichord92/ConstructorHangman#readme",
   "dependencies": {
     "inquirer": "^5.0.1",
+    "is-letter": "^1.1.1",
     "prompt": "^1.0.0"
   }
 }

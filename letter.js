@@ -1,14 +1,30 @@
-// Controls whether letter appears as "_" or as actual letter.
-// Passes letter into game.js
+var Letter = function(ltr) {
 
+// Property to store the actual letter
+  this.letter = ltr;
 
-var letter = function(let){
-	this.charac = let;
-	this.appear = false;
-	this.letterRender = function(){
-		return !(this.appear) ? "_" : this.charac;
-	};
+// Property/boolean if the letter can be shown
+  this.appear = false;
+
+  this.letterRender = function() {
+
+    if(this.letter == ' ') {
+
+      // Makes sure that when the function checks if the word is found doesn't read the blank as false.
+      this.appear = true;
+      return '  ';
+    }
+
+    if(this.appear === false) {
+      return ' _ ';
+    } 
+
+    else {
+      return this.letter;
+    }
+
+  };
 };
 
-// Export the Constructor
-module.exports = letter;
+// Export to use in word.js
+module.exports = Letter;
